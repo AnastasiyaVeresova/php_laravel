@@ -1,4 +1,9 @@
-php -S 127.0.0.1:8080 -t public
+composer create-project --prefer-dist laravel/laravel .
+
+
+php -S 127.0.0.1:8000 -t public
+
+-----------------------------------------------Controller
 
 php artisan make:controller NewController - create controller (--resource)
 
@@ -6,3 +11,24 @@ php artisan make:controller NewController - create controller (--resource)
 php artisan config:clear
 
 http://127.0.0.1:8080/test?param=1&param2=Hi
+
+
+-----------------------------------------------Model
+
+php artisan make:model User
+
+-----------------------------------------------
+php artisan make:migration create_users_table
+
+php artisan migrate  запуск
+
+php artisan migrate:status   вывести список запущенных
+
+php artisan migrate -- force    принудительный запуск
+
+php artisan migrate:rollback    откат до изменений с последнего запуска
+
+php artisan migrate:rollback  --step=3   откат на кол-во шагов
+
+php artisan migrate:reset    откат всех
+
