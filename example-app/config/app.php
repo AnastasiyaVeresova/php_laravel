@@ -28,6 +28,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -105,6 +107,7 @@ return [
         ),
     ],
 
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
@@ -122,5 +125,12 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
+    'providers' => [
+        // Other Service Providers
+        \App\Providers\AppServiceProvider::class,
+        \App\Providers\BladeHelperServiceProvider::class,
+    ],
+
 
 ];

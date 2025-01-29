@@ -8,7 +8,12 @@ php -S 127.0.0.1:8000 -t public
 php artisan make:controller NewController - create controller (--resource)
 
 
+php artisan config:cache
 php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+
+
 
 http://127.0.0.1:8080/test?param=1&param2=Hi
 
@@ -31,4 +36,17 @@ php artisan migrate:rollback    откат до изменений с после
 php artisan migrate:rollback  --step=3   откат на кол-во шагов
 
 php artisan migrate:reset    откат всех
+
+
+------------------------------
+
+php artisan make:command TestDatabase
+
+
+
+mysql -u hw_test_user -p
+
+-------------------------------component
+
+php artisan make:component header
 

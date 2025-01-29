@@ -34,19 +34,6 @@ class TestDatabase extends Command
             $employees->first_name = 'John';
             $employees->email = 'John@gmail.com';
             $employees->save();
-
-
-
-
-
-
-
-
-
-
-
-
-
             $this->info('Employee record inserted successfully.');
         } catch (\Exception $e) {
             Log::error('Error inserting employee record: ' . $e->getMessage());
