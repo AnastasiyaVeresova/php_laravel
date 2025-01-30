@@ -126,11 +126,11 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'providers' => [
+    /*'providers' => [
         // Other Service Providers
         \App\Providers\AppServiceProvider::class,
         \App\Providers\BladeHelperServiceProvider::class,
-    ],
+    ],*/
 
 
 ];

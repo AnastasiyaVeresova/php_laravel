@@ -12,8 +12,7 @@ Route::get('/', function () {
 Route::get('/test', [\App\Http\Controllers\SimpleController::class, 'test']);
 Route::get('/books', [\App\Http\Controllers\EntityController::class, 'index'])->name('books');
 Route::post('/books', [\App\Http\Controllers\EntityController::class, 'store'])->name('save_book');
-Route::get('remove_book/{id}', [\App\Http\Controllers\EntityController::class, 'delete'])->
-where(['id'=>'[A-Za-z0-9]+'])->name('remove_book');
+Route::get('remove_book/{id}', [\App\Http\Controllers\EntityController::class, 'delete'])->where(['id' => '[A-Za-z0-9]+'])->name('remove_book');
 
 // Route::get('/user', [\App\Http\Controllers\UserController::class, 'index']);
 
@@ -41,3 +40,17 @@ Route::get('/about', function () {
 Route::get('/uppercase', function () {
     return view('testdir');
 });
+
+Route::get('/test_parametres', [\App\Http\Controllers\RequestTestController::class, 'testRequest']);
+
+Route::get('/test_header', [\App\Http\Controllers\TestHeaderCotroller::class, 'getHeader']);
+
+Route::get('/test_cookie', [\App\Http\Controllers\TestCookieController::class, 'TestCookie']);
+
+Route::get('/upload_file', [\App\Http\Controllers\FileUploadController2::class, 'showForm'])->name('showForm');
+
+Route::post('/upload_file', [\App\Http\Controllers\FileUploadController2::class, 'fileUpload'])->name('uploadFile');
+
+Route::post('/json_parse', [\App\Http\Controllers\JsonParseController::class, 'parseJson']);
+
+Route::get('/json_parse', [\App\Http\Controllers\JsonParseController::class, 'parseJson']);

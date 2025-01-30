@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeeController;
+
 
 // Первый роут для корневой страницы проекта
 Route::get('/', function () {
@@ -21,3 +23,7 @@ Route::get('/contacts', function () {
         'phone' => '+1234567890'
     ]);
 });
+
+Route::get('/get-employee-data', [\App\Http\Controllers\EmployeeController::class, 'index']);
+Route::post('/store-form', [\App\Http\Controllers\EmployeeController::class, 'store']);
+Route::put('/user/{id}', [\App\Http\Controllers\EmployeeController::class, 'update']);
