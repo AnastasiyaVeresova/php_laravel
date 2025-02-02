@@ -9,8 +9,13 @@ class VerifyCsrfToken extends Middleware
     // protected $except = [
     //     '/test_parametres'
     // ];
-    protected $except = [
-        '/json_parse'
-    ];
-
+    // protected $except = [
+    //     '/json_parse'
+    // ];
+    // protected $except = [
+    //     'form'
+    // ];
+    //     protected $except = [
+    //     '/security_test'
+    // ];
 }

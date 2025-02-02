@@ -1,4 +1,7 @@
-composer create-project --prefer-dist laravel/laravel .
+
+
+composer create-project --prefer-dist laravel/laravel example-app-part2
+
 
 
 php -S 127.0.0.1:8000 -t public
@@ -49,4 +52,13 @@ mysql -u hw_test_user -p
 -------------------------------component
 
 php artisan make:component header
+
+
+----------------------------------form
+
+php artisan make:form Forms/EmployeeForm --fields="first_name:text, personal_data_agreement:checkbox"
+
+
+
+
 

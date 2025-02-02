@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\BookController;
 
 
 // Первый роут для корневой страницы проекта
@@ -27,3 +28,7 @@ Route::get('/contacts', function () {
 Route::get('/get-employee-data', [\App\Http\Controllers\EmployeeController::class, 'index']);
 Route::post('/store-form', [\App\Http\Controllers\EmployeeController::class, 'store']);
 Route::put('/user/{id}', [\App\Http\Controllers\EmployeeController::class, 'update']);
+
+
+Route::get('/index', [BookController::class, 'index'])->name('index_book');
+Route::post('/store', [BookController::class, 'store'])->name('index_store');
