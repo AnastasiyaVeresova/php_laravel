@@ -16,6 +16,6 @@ class VerifyCsrfToken extends Middleware
     //     'form'
     // ];
     //     protected $except = [
-    //     '/security_test'
+    //     '/list_of_books'
     // ];
 }
