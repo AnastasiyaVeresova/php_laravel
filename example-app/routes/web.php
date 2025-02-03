@@ -10,6 +10,10 @@ use App\Http\Controllers\TestSecurityController;
 use App\Http\Controllers\TestValidationController;
 use App\Http\Controllers\FormBuilderTestController;
 
+use App\Http\Controllers\NewsController;
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -169,3 +173,8 @@ Route::get('/file_show_stream', function () {
 });
 
 Route::get('/check_di', [\App\Http\Controllers\TestDiController::class, 'showUrl']);
+
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
+Route::post('/news', [NewsController::class, 'store'])->name('news.store');
+Route::get('/news/{id}/hide', [NewsController::class, 'hide'])->name('news.hide');
