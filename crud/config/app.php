@@ -126,6 +126,7 @@ return [
     // 'providers' => [
     //     // Other Service Providers
     //     Barryvdh\DomPDF\ServiceProvider::class,
+    //Kris\LaravelFormBuilder\FormBuilderServiceProvider::class
     // ],
 
     // 'aliases' => [

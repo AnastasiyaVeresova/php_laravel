@@ -167,3 +167,5 @@ Route::get('/file_show_stream', function () {
            echo file_get_contents('https://google.com');
     }, 'google.html');
 });
+
+Route::get('/check_di', [\App\Http\Controllers\TestDiController::class, 'showUrl']);

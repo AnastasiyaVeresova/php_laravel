@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+//use Kris\LaravelFormBuilder\FormBuilderServiceProvider;
+//use Barryvdh\DomPDF\ServiceProvider as DomPDFServiceProvider;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -16,3 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
+//$app->register(FormBuilderServiceProvider::class);
+//$app->register(DomPDFServiceProvider::class);
+
+//return $app;

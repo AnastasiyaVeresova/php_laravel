@@ -124,8 +124,9 @@ return [
     ],
 
     // 'providers' => [
-    // //     // ...
-    //     Kris\LaravelFormBuilder\FormBuilderServiceProvider::class
+    //  //   \App\Providers\CustomLogsProvider::class
+
+    // //    Kris\LaravelFormBuilder\FormBuilderServiceProvider::class
     // ],
 
     // 'aliases' => [
