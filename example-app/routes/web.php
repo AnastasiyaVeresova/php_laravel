@@ -3,6 +3,7 @@
 use App\Http\Controllers\TestFormController;
 use Illuminate\Support\Facades\Route;
 use \Illuminate\Http\Response;
+use Illuminate\Support\Facades\App;
 
 use Illuminate\Support\Facades\Facade;
 use App\Http\Controllers\EmployeesController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\TestValidationController;
 use App\Http\Controllers\FormBuilderTestController;
 
 use App\Http\Controllers\NewsController;
+use App\Models\User;
 
 
 
@@ -178,3 +180,39 @@ Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
 Route::post('/news', [NewsController::class, 'store'])->name('news.store');
 Route::get('/news/{id}/hide', [NewsController::class, 'hide'])->name('news.hide');
+
+Route::get('sync-news', function () {
+    \App\Jobs\SyncNews::dispatch(10);
+    return response(['status' => 'success']);
+});
+
+Route::get('locale', function () {
+    echo \Illuminate\Support\Facades\App::getLocale();
+});
+Route::get('locale/set/{locale}', function ($locale) {
+    App::setLocale($locale);
+    echo App::getLocale();
+    echo '<hr>';
+    echo __('messages.greet');
+});
+
+Route::get('locale/{locale}/thanks', function ($locale, \Illuminate\Http\Request $request) {
+    App::setLocale($locale);
+    echo __('messages.thanks', ['name' => $request->input('name')]);
+});
+
+Route::get('user/create-test/{amount}', function ($amount) {
+    $users = User::factory($amount)->create();
+    return response()->json($users);
+});
+
+Route::get('user/{user}/change-email', function (User $user, \Illuminate\Http\Request $request) {
+    $oldEmail = $user->email;
+    $user->email = $request->input('email');
+    $user->save();
+    $user->notify(new \App\Notifications\UserEmailChangedNotification($oldEmail));
+    return response(['result' => 'email changed']);
+});
+Route::get('user/{user}/notification', function (User $user) {
+    return $user->notifications;
+});
