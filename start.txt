@@ -70,5 +70,18 @@ php artisan make:event NewsCreated
 
 php artisan make:listener SendNewsCreatedNotification --event=NewsCreated
 
+------------------------------------------------------queue
 
+php artisan make:job SyncNews
 
+php artisan queue:table
+php artisan queue:listen
+
+------------------------------------------------------shedule
+
+php artisan schedule:run
+--------------------------------------------------
+
+php artisan notification:table
+
+php artisan make:notification UserEmailChangedNotification
