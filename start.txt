@@ -21,6 +21,7 @@ php artisan view:clear
 
 
 
+
 http://127.0.0.1:8080/test?param=1&param2=Hi
 
 
@@ -85,3 +86,14 @@ php artisan schedule:run
 php artisan notification:table
 
 php artisan make:notification UserEmailChangedNotification
+
+----------------------------------------laravel breeze
+
+composer require laravel/breeze
+php artisan breeze:install
+
+-------------------------------------------policy
+php artisan make:policy UserPolicy --model=User
+---------------------------------------------mail
+
+php artisan make:mail BookingCompletedMailing
