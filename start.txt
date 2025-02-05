@@ -1,11 +1,7 @@
 laravel new target_class
 php artisan serve --port=1000
 
-
-
 composer create-project --prefer-dist laravel/laravel example-app-part2
-
-
 
 php -S 127.0.0.1:8000 -t public
 
@@ -18,9 +14,6 @@ php artisan config:cache
 php artisan config:clear
 php artisan route:clear
 php artisan view:clear
-
-
-
 
 http://127.0.0.1:8080/test?param=1&param2=Hi
 
@@ -97,3 +90,11 @@ php artisan make:policy UserPolicy --model=User
 ---------------------------------------------mail
 
 php artisan make:mail BookingCompletedMailing
+
+------------------------------------------factory
+php artisan make:seeder UserSeeder
+php artisan make:factory HotelFactory
+php artisan migrate --seed
+php artisan migrate:fresh --seed
+
+php artisan db:seed
